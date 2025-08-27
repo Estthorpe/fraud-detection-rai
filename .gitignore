@@ -1,0 +1,30 @@
+# venv
+.venv/
+# bytecode & cache
+__pycache__/
+*.pyc
+# OS junk
+.DS_Store
+Thumbs.db
+# data & outputs
+data/raw/
+data/processed/
+models/
+reports/
+mlflow/
+# dotenv & secrets
+.env
+*.env
+# notebooks checkpoints
+.ipynb_checkpoints/
+# Streamlit cache
+**/.streamlit/
+.streamlit/
+# pytest/coverage
+htmlcov/
+.coverage
+# build
+dist/
+build/
+# VSCode
+.vscode/

@@ -1,0 +1,7 @@
+GUIDE — Fraud Detection with RAI
+
+Phase 0:
+1) Create venv and install requirements (see README / Phase 0).
+2) Copy .env.example to .env (edit if needed).
+3) Run: python scripts/download_kaggle.py  (stub ok for now)
+4) Run Streamlit (placeholder app): streamlit run app/streamlit_app.py

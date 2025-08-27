@@ -1,0 +1,88 @@
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  models_dir: "models"
+  reports_dir: "reports"
+  plots_dir: "reports/plots"
+  mlflow_dir: "mlflow"
+
+data:
+  dataset_name: "creditcard.csv"
+  target: "Class"
+  drop_cols: []         # we’ll evaluate 'Time' later in Phase 1
+  id_cols: []           # no IDs in this dataset; keep hook for generality
+
+split:
+  test_size: 0.2
+  stratify: true
+  random_state: 42
+
+baseline:
+  scaler: "standard"
+  model: "logreg"       # logistic regression
+  logreg:
+    C: 1.0
+    class_weight: "balanced"
+    penalty: "l2"
+    solver: "liblinear"
+    max_iter: 500
+
+advanced:
+  preferred: "lightgbm"   # or: xgboost
+  early_stopping_rounds: 100
+  cv_folds: 4
+  random_search_iter: 25
+  lightgbm_params:
+    n_estimators: 2000
+    learning_rate: 0.03
+    num_leaves: 64
+    max_depth: -1
+    subsample: 0.9
+    colsample_bytree: 0.9
+    reg_alpha: 0.0
+    reg_lambda: 0.0
+    objective: "binary"
+    n_jobs: -1
+  xgboost_params:
+    n_estimators: 2000
+    learning_rate: 0.03
+    max_depth: 6
+    subsample: 0.9
+    colsample_bytree: 0.9
+    reg_alpha: 0.0
+    reg_lambda: 0.0
+    objective: "binary:logistic"
+    n_jobs: -1
+
+imbalance:
+  strategy: "class_weight"  # options: class_weight | smote | smoteenn
+  smote:
+    sampling_strategy: 0.10
+    k_neighbors: 5
+    random_state: 42
+  smoteenn:
+    sampling_strategy: 0.10
+    random_state: 42
+
+thresholding:
+  fpr_target: 0.01       # 1%
+  topk_frac: 0.01        # evaluate Recall@Top-1%
+  calibration: "none"    # options: none | isotonic | platt
+
+explain:
+  shap_background_n: 1000
+  shap_sample_n: 5000
+
+fairness:
+  synthetic_group_col: "demo_synth"
+  group_prevalence: 0.5   # A/B split
+  fraud_rate_shift_B: 0.0  # add lift for demo later (Phase 6)
+  random_state: 42
+
+streamlit:
+  sample_rows: 5000
+
+mlflow:
+  enabled: true
+  experiment_name: "fraud_detection_rai"
+  tracking_uri_env: "MLFLOW_TRACKING_URI"
