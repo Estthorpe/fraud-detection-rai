@@ -9,8 +9,6 @@ Thumbs.db
 # data & outputs
 data/raw/
 data/processed/
-models/
-reports/
 mlflow/
 # dotenv & secrets
 .env
@@ -28,3 +26,13 @@ dist/
 build/
 # VSCode
 .vscode/
+
+# Ignore models and reports by default
+
+
+# But keep these important artifacts
+!models/baseline_pipeline.pkl
+!reports/metrics_*.json
+!reports/thresholds_*.json
+!reports/threshold_eval_*.csv
+!reports/split_indices.csv

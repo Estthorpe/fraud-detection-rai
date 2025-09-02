@@ -1,0 +1,70 @@
+{
+  "schema": {
+    "n_rows": 284807,
+    "n_cols": 31,
+    "has_all_expected": true,
+    "missing_columns": [],
+    "extra_columns": []
+  },
+  "qc": {
+    "nulls": {
+      "Time": 0,
+      "V1": 0,
+      "V2": 0,
+      "V3": 0,
+      "V4": 0,
+      "V5": 0,
+      "V6": 0,
+      "V7": 0,
+      "V8": 0,
+      "V9": 0,
+      "V10": 0,
+      "V11": 0,
+      "V12": 0,
+      "V13": 0,
+      "V14": 0,
+      "V15": 0,
+      "V16": 0,
+      "V17": 0,
+      "V18": 0,
+      "V19": 0,
+      "V20": 0,
+      "V21": 0,
+      "V22": 0,
+      "V23": 0,
+      "V24": 0,
+      "V25": 0,
+      "V26": 0,
+      "V27": 0,
+      "V28": 0,
+      "Amount": 0,
+      "Class": 0
+    },
+    "duplicate_rows": 1081,
+    "class_counts": {
+      "0": 284315,
+      "1": 492
+    },
+    "class_ratio": {
+      "0": 0.9982725143693799,
+      "1": 0.001727485630620034
+    }
+  },
+  "stratified_split_check": {
+    "test_size": 0.2,
+    "class_ratio_train": {
+      "0": 0.998334655035686,
+      "1": 0.0016653449643140364
+    },
+    "class_ratio_test": {
+      "0": 0.9983258731892997,
+      "1": 0.0016741268107003137
+    },
+    "n_train": 226980,
+    "n_test": 56746
+  },
+  "leakage_safeguards": {
+    "dropped_time": true,
+    "note": "Time dropped to avoid temporal leakage influence; model will not see sequence index."
+  }
+}
