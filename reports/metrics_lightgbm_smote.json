@@ -1,0 +1,11 @@
+{
+  "auprc": 0.8217340387438477,
+  "roc_auc": 0.9791239807166502,
+  "brier": 0.0005367557418452806,
+  "pos_rate": 0.0016741268107003137,
+  "recall_at_topk_frac": 0.8631578947368421,
+  "algo": "lightgbm",
+  "imbalance": "smote",
+  "calibration": "none",
+  "search_iter": 10
+}

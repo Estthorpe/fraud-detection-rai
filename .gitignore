@@ -26,7 +26,8 @@ dist/
 build/
 # VSCode
 .vscode/
-
+#Kaggle API Key
+kaggle.json
 # Ignore models and reports by default
 
 
@@ -36,3 +37,15 @@ build/
 !reports/thresholds_*.json
 !reports/threshold_eval_*.csv
 !reports/split_indices.csv
+
+
+# reports default ignore at top
+reports/*
+# keep key aggregates
+!reports/variant_comparison.csv
+!reports/model_report.md
+!reports/final_model.json
+!reports/confusion_*_fpr_target.csv
+# you likely already keep metrics_*.json and thresholds_*.json
+!reports/metrics_*.json
+!reports/thresholds_*.json
