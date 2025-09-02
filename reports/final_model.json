@@ -1,0 +1,4 @@
+{
+  "winner": "lightgbm_smote",
+  "reason": "Best AUPRC (0.82) with recall 0.863 at FPR\u22641%"
+}
